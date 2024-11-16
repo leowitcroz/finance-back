@@ -8,14 +8,14 @@ datasource db {
 }
 
 model expenses {
-  idexpenses Int      @default(autoincrement())
+  idexpenses Int      @id @default(autoincrement())
   id_user    Int
+  income     String   @db.VarChar(45)
   type       String   @db.VarChar(45)
   price      String   @db.VarChar(45)
   date       DateTime @default(now()) @db.Timestamp(0)
   user       user     @relation(fields: [id_user], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_expenses")
 
-  @@id([idexpenses, id_user])
   @@index([id_user], map: "fk_user_expenses_idx")
 }
 

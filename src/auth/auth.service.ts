@@ -67,7 +67,7 @@ export class AuthService {
         const token = this.createToken(user);
 
         const data = this.checkToken(token.accessToken)
-
+        
 
         return {
             data,
