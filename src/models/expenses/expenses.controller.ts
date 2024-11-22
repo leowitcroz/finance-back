@@ -19,4 +19,14 @@ export class ExpensesController {
         return this.expenses.getAllExpenses({ user_id })
     }
 
+    @Get('incomes/:id')
+    async getIncomes(@Param('id', ParseIntPipe) user_id) {
+        return this.expenses.getIncomes({ user_id })
+    }
+
+    @Get('prices/:id')
+    async getExpenses(@Param('id', ParseIntPipe) user_id) {
+        return this.expenses.getExpneses({ user_id })
+    }
+
 }
